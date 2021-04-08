@@ -23,20 +23,27 @@ artillery.cmd report .\report.json
 
 ### build
 ```shell
-docker build -t 사용자/도커허브레파지토리
+docker build -t 사용자이름/도커허브레파지토리
 
 ex) docker build -t kimkuma/springboot-cpu-bound
 ```
 ### push
 ```shell
-docker push 사용자/도커허브레파지토리
+docker push 사용자이름/도커허브레파지토리
 
 ex) docker push kimkuma/springboot-cpu-bound
 ```
 
 ### pull
 ```shell
-docker pull 사용자/도커허브레파지토리
+docker pull 사용자이름/도커허브레파지토리
 
 ex) docker pull kimkuma/springboot-cpu-bound
+```
+
+### run
+```shell
+docker run -p [호스트port]:[컨테이너port] 사용자이름/도커허브레파지토리
+
+ex) docker run -p 80:80 kimkuma/springboot-cpu-bound
 ```
