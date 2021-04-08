@@ -18,3 +18,25 @@ artillery.cmd run --ouput report.json .\cpu-test.yaml
 ```shell
 artillery.cmd report .\report.json
 ```
+
+## Docker 빌드 및 push
+
+### build
+```shell
+docker build -t 사용자/도커허브레파지토리
+
+ex) docker build -t kimkuma/springboot-cpu-bound
+```
+### push
+```shell
+docker push 사용자/도커허브레파지토리
+
+ex) docker push kimkuma/springboot-cpu-bound
+```
+
+### pull
+```shell
+docker pull 사용자/도커허브레파지토리
+
+ex) docker pull kimkuma/springboot-cpu-bound
+```
