@@ -64,7 +64,6 @@ sudo systemctl start jenkins
 sudo systemctl status jenkins
 ```
 ### 여기까지 실행하면 설치는 완료
-
 ### 초기 Password 확인
 ```shell
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
