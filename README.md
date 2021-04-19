@@ -69,4 +69,31 @@ sudo systemctl status jenkins
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
+1. Jenkins ssh 접속을 위한 키생성
+```shell
+ssh-keygen -t rsa -f ~/.ssh/id_rsa
+```
 
+
+2. 생성된 공개키 (id_rsa.pub) 내용을 워커 인스턴스 (어플리케이션이 실행될 서버)에 등록한다.
+
+```shell
+vi ~/.ssh/authorized_keys
+```
+
+3. 워커 인스턴스 폴더 권한 변경
+```shell
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+```
+
+4. jenkins Dashboard -> 환경설정 메뉴로 들어가서 Publish over SSH 구간에 내용을 입력한다.
+
+Key -> id_rsa 키의 내용 입력  
+SSH Server 에 워커 인스턴스의 정보를 적는다.  
+  
+Name : 명칭  
+HostName : ip 주소  
+Username : 접속자명  
+Remote Directory : 접속 폴더 
+   
