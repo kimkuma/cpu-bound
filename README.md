@@ -47,3 +47,27 @@ docker run -p [호스트port]:[컨테이너port] 사용자이름/도커허브레
 
 ex) docker run -p 80:80 kimkuma/springboot-cpu-bound
 ```
+
+## Jenkins 설치(CentOS 기준)
+
+### jenkins 인스턴스에서 실행하는 명령어
+```shell
+sudo yum install wget
+sudo yum install maven
+sudo yum install git
+sudo yum install docker
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo yum install jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+```
+### 여기까지 실행하면 설치는 완료
+
+### 초기 Password 확인
+```shell
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+
+
